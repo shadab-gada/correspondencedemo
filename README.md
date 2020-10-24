@@ -1,6 +1,6 @@
 # Correspondence Demo
-###### steps
+#### steps
 	- gradle build
 	- build docker image	=>	docker build -t correspondencedemo:latest .
-	- run docker =>	docker run -p 8080:8080 correspondencedemo
+	- run docker container =>	docker run -p 8080:8080 correspondencedemo
 	- gradle clean
