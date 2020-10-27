@@ -8,6 +8,6 @@ public class MessagesImp implements Messages {
 
     @Override
     public String getHelloMessage() {
-        return "Hello World !!";
+        return "Hello Persistent !!";
     }
 }
