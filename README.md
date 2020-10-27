@@ -91,3 +91,10 @@ There is also an FAQ included below this section for certain multistep procedure
      
      
     
+=======
+#### steps
+	- pull repo
+	- gradle build
+	- build docker image	=>	docker build -t correspondencedemo:latest .
+	- run docker container =>	docker run -p 8080:8080 correspondencedemo
+>>>>>>> 565a27b64c935e9adf62a712eb33c78ab3a2bd06
