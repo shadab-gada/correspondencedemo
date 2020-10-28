@@ -1,19 +1,35 @@
-node{
+pipeline{
+agent any
+
+ environment {
+        def gradleHome = tool name: 'gradle-5.6.4', type: 'gradle'
+        def gradleCMD = "${gradleHome}/bin/gradle"
+    }
+
+ stages{
+     
     stage("SCM Checkout"){
-           git 'https://github.com/shadab-gada/correspondencedemo'
+            steps{
+                 git 'https://github.com/shadab-gada/correspondencedemo'
+            }
     }
 
     stage("Gradle Build"){
-            def gradleHome = tool name: 'gradle-5.6.4', type: 'gradle'
-            def gradleCMD = "${gradleHome}/bin/gradle"
-            sh "${gradleCMD} build"
+            steps{
+                sh "${gradleCMD} build"
+           }
     }
 
     stage("Build docker image"){
-            sh "docker build -t correspondencedemo:latest ."
+            steps{
+                sh "docker build -t correspondencedemo:latest ."
+            }
     }
 
     stage("Run Container"){
-            sh "docker run -d -p 8080:8080 correspondencedemo"
+            steps{
+                 sh "docker run -d -p 8080:8080 correspondencedemo"
+            }
     }
+   }
 }
