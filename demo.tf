@@ -1,3 +1,3 @@
  module "demo" {
-   cloudfront_root_object  = "index.html"
+   file_path  = "README.md"
  }
