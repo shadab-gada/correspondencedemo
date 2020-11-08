@@ -1,3 +1,3 @@
 output "my_file" {
-  value = "${path.module}/README.md.py"
+  value = "${path.module}/README.md"
 }
