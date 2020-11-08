@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.1.17.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
+	id 'checkstyle'
 }
 
 group = 'com.example'
@@ -23,4 +24,12 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+// Checkstyle plugin configuration
+def configDir = "${project.rootDir}/config"
+checkstyle {
+	configFile file("$configDir/checkstyle/checkstyle.xml")
+	configProperties.checkstyleSuppressionsPath = file("$configDir/checkstyle/checkstyle-suppressions.xml").absolutePath
+	toolVersion '7.2'
 }

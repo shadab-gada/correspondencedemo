@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MessageController {
 
     @Autowired
-    MessagesImp messagesImp;
+    private MessagesImp messagesImp;
 
 
     @GetMapping("/")
